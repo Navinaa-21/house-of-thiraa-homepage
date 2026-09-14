@@ -4,6 +4,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* House of Thiraa brand tokens */
+@theme {
+  --color-cream: #f6f0e6;
+  --color-paper: #fbf8f2;
+  --color-maroon: #7a2333;
+  --color-maroon-deep: #551723;
+  --color-gold: #ad8a55;
+  --color-ink: #2a211f;
+  --color-ink-soft: #7a6e68;
+  --color-hairline: #e3d9c8;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+}
+
+
 /*
  * Design system definition.
  *
