@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import kurtas from "../assets/cat-kurtas.jpg";
 import kurtaSets from "../assets/cat-kurta-sets.jpg";
 import coords from "../assets/cat-coords.jpg";
@@ -8,15 +9,18 @@ import Divider from "./Divider";
 function Tile({
   image,
   label,
+  slug,
   className,
 }: {
   image: string;
   label: string;
+  slug: string;
   className?: string;
 }) {
   return (
-    <a
-      href="#"
+    <Link
+      to="/collections/$slug"
+      params={{ slug }}
       className={`group relative block overflow-hidden ${className ?? ""}`}
     >
       <img
@@ -29,7 +33,7 @@ function Tile({
       <span className="absolute bottom-5 left-5 font-display text-xl text-paper sm:text-2xl">
         {label}
       </span>
-    </a>
+    </Link>
   );
 }
 
@@ -48,15 +52,17 @@ export default function Categories() {
           <Tile
             image={kurtas}
             label="Kurtas"
+            slug="kurtas"
             className="col-span-2 row-span-2 h-[300px] md:h-full"
           />
-          <Tile image={kurtaSets} label="Kurta Sets" className="h-[220px] md:h-full" />
-          <Tile image={coords} label="Co-ord Sets" className="h-[220px] md:h-full" />
-          <Tile image={dupattas} label="Dupattas & Stoles" className="h-[220px] md:h-full" />
-          <Tile image={bottoms} label="Bottoms" className="h-[220px] md:h-full" />
+          <Tile image={kurtaSets} label="Kurta Sets" slug="kurta-sets" className="h-[220px] md:h-full" />
+          <Tile image={coords} label="Co-ord Sets" slug="co-ords" className="h-[220px] md:h-full" />
+          <Tile image={dupattas} label="Dupattas & Stoles" slug="dupattas-stoles" className="h-[220px] md:h-full" />
+          <Tile image={bottoms} label="Bottoms" slug="bottoms" className="h-[220px] md:h-full" />
         </div>
 
       </div>
     </section>
   );
 }
+

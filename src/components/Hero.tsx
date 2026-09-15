@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import hero1 from "../assets/hero-1.jpg";
 import hero2 from "../assets/hero-2.jpg";
@@ -52,12 +53,13 @@ export default function Hero() {
           <p className="mt-4 max-w-[400px] text-sm leading-relaxed text-ink-soft">
             {slide.text}
           </p>
-          <a
-            href="#bestsellers"
+          <Link
+            to="/collections/$slug"
+            params={{ slug: "new-arrivals" }}
             className="mt-7 inline-block rounded-[2px] bg-maroon px-7 py-3 text-[12px] uppercase tracking-[0.08em] text-paper transition-colors hover:bg-maroon-deep"
           >
             Shop New Arrivals
-          </a>
+          </Link>
         </div>
       </div>
 

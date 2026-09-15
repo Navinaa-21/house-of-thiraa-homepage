@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import craft from "../assets/craft.jpg";
 
 export default function Craft() {
@@ -24,12 +25,12 @@ export default function Craft() {
             embroidery is finished by hand. Small irregularities stay — they are the mark of
             a person, not a machine.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/about"
             className="mt-8 inline-block rounded-[2px] border border-maroon px-7 py-3 text-[12px] uppercase tracking-[0.08em] text-maroon transition-colors hover:bg-maroon hover:text-paper"
           >
             Our Story
-          </a>
+          </Link>
         </div>
       </div>
     </section>

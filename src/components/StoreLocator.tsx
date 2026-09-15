@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import store1 from "../assets/store-1.jpg";
 import store2 from "../assets/store-2.jpg";
 import store3 from "../assets/store-3.jpg";
@@ -14,25 +15,35 @@ export default function StoreLocator() {
   return (
     <section className="bg-paper py-16 sm:py-20">
       <div className="mx-auto max-w-[1240px] px-5">
-        <h2 className="font-display text-[28px] text-ink sm:text-[36px]">Visit us in person</h2>
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="font-display text-[28px] text-ink sm:text-[36px]">Visit us in person</h2>
+          <Link
+            to="/stores"
+            className="shrink-0 border-b border-maroon pb-1 text-[12px] uppercase tracking-[0.08em] text-maroon"
+          >
+            View all locations
+          </Link>
+        </div>
 
         <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stores.map((store) => (
             <article key={store.city}>
-              <img
-                src={store.image}
-                alt={`House of Thiraa store in ${store.city}`}
-                loading="lazy"
-                className="h-[200px] w-full object-cover"
-              />
+              <Link to="/stores">
+                <img
+                  src={store.image}
+                  alt={`House of Thiraa store in ${store.city}`}
+                  loading="lazy"
+                  className="h-[200px] w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+                />
+              </Link>
               <h3 className="mt-5 font-display text-xl text-ink">{store.city}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">{store.address}</p>
-              <a
-                href="#"
-                className="mt-4 inline-block border-b border-maroon pb-1 text-[12px] uppercase tracking-[0.08em] text-maroon"
+              <Link
+                to="/stores"
+                className="mt-4 inline-block border-b border-maroon pb-1 text-[12px] uppercase tracking-[0.08em] text-maroon hover:text-maroon-deep transition-colors"
               >
                 Visit Store
-              </a>
+              </Link>
             </article>
           ))}
         </div>
