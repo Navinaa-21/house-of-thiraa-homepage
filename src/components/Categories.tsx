@@ -44,17 +44,18 @@ export default function Categories() {
           <Divider />
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:grid-rows-2">
+        <div className="mt-8 grid grid-cols-2 gap-4 md:h-[560px] md:grid-cols-4 md:grid-rows-2">
           <Tile
             image={kurtas}
             label="Kurtas"
-            className="col-span-2 row-span-2 h-[300px] md:h-full md:min-h-[560px]"
+            className="col-span-2 row-span-2 h-[300px] md:h-full"
           />
-          <Tile image={kurtaSets} label="Kurta Sets" className="h-[220px] md:h-[272px]" />
-          <Tile image={coords} label="Co-ord Sets" className="h-[220px] md:h-[272px]" />
-          <Tile image={dupattas} label="Dupattas & Stoles" className="h-[220px] md:h-[272px]" />
-          <Tile image={bottoms} label="Bottoms" className="h-[220px] md:h-[272px]" />
+          <Tile image={kurtaSets} label="Kurta Sets" className="h-[220px] md:h-full" />
+          <Tile image={coords} label="Co-ord Sets" className="h-[220px] md:h-full" />
+          <Tile image={dupattas} label="Dupattas & Stoles" className="h-[220px] md:h-full" />
+          <Tile image={bottoms} label="Bottoms" className="h-[220px] md:h-full" />
         </div>
+
       </div>
     </section>
   );

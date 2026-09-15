@@ -26,7 +26,7 @@ const slides = [
 
 export default function Hero() {
   const [active, setActive] = useState(0);
-  const slide = slides[active];
+  const slide = slides[active] ?? slides[0]!;
 
   return (
     <section className="relative h-[440px] w-full overflow-hidden bg-cream sm:h-[560px]">
